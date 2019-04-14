@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <title>Money Conversion</title>
+  </head>
+  <body>
+
+    <div class = "container">
+        
+
+        <div class = "row">
+
+
+            <div class ="col-md-6">
+
+
+                <h1 class = "display-4 text-center" id="moneyConverter">Money Converter</h1>
+
+                <form>
+                    <div class = "form-group">
+                        <input type ="number" class="form-control form-control-lg" placeholder="Enter amount in USD..." id="moneyInput">
+                    </div>
+                </form>
+
+                <div id="output"> <!--These divs make up the output for peso conversions-->
+
+                    <div class="card bg-primary mb-2 text-light">
+                        <div class="card-block">
+                            <h4>Pesos: </h4>
+                            <div id="pesosOutput">
+
+                            </div>
+                        </div>
+                    </div>
+                </div> <!--End peso conversions-->
+
+                <br>
+
+                <div id="output"> <!--These divs make up the output for euro conversions-->
+
+                    <div class="card bg-success mb-2 text-light">
+                        <div class="card-block">
+                            <h4>Euros: </h4>
+                            <div id="euroOutput">
+
+                            </div>
+                        </div>
+                    </div>
+                </div> <!--End euro conversions-->
+
+                <br>
+
+
+            <div id="output"> <!--These divs make up the output for rupee conversions-->
+
+                    <div class="card bg-danger text-light">
+                        <div class="card-block">
+                            <h4>Rupee: </h4>
+                            <div id="rupeeOutput">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        document.getElementById("moneyInput").addEventListener('input', function(e){
+            
+            var usdAmount = document.getElementById("moneyInput").value;
+            var usdToPeso = (usdAmount * 19.42);
+            var usdToEuro = (usdAmount * 0.891407);
+            var usdToRupee = (usdAmount * 69.38);
+
+            let usd = e.target.value;
+            document.getElementById("pesosOutput").innerHTML = usdToPeso;
+            document.getElementById("euroOutput").innerHTML = usdToEuro;
+            document.getElementById("rupeeOutput").innerHTML = usdToRupee;
+        });
+
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
